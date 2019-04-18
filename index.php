@@ -1,2 +1,2 @@
 <?php echo '<p>Hello World</p>'; ?> 
-<?php include_once("index.html"); ?>
+<iframe src="https://sfmc.stylelabsdev.com"></iframe>
