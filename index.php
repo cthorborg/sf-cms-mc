@@ -18,8 +18,8 @@ function chosen(imgId) {
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
   sdk.setContent(""); //resets content block
 
-  var fit = document.getElementById('scaleFit').checked;
-  var acenter = document.getElementById('alignCenter').checked;
+  /*var fit = document.getElementById('scaleFit').checked;
+  var acenter = document.getElementById('alignCenter').checked;*/
 
   selectedImageId = imgId;
 
@@ -27,7 +27,7 @@ function chosen(imgId) {
     image = document.getElementById(imgId).src;
   }
 
-  if(fit){
+  /**if(fit){
     sdk.setContent("<img width='100%' src='" + image + "'/>");
 
   }else{
@@ -39,7 +39,7 @@ function chosen(imgId) {
       sdk.setContent("<img src='" + image + "'/>");
 
     }
-  }
+  }**/
 }
 
     </script>
