@@ -4,8 +4,10 @@
 <script src="https://apis.google.com/js/api.js"></script>
 <script>
   window.addEventListener("message", function(event){
-    if(event.data.__type)
+    if(event.data.__type) {
       alert(JSON.stringify(event.data));
+      chosen(event.data.public_link);
+    }
   }, false);
 
 function chosen(imgId) {
