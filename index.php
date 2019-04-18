@@ -23,15 +23,15 @@ function chosen(imgId) {
   /*var fit = document.getElementById('scaleFit').checked;
   var acenter = document.getElementById('alignCenter').checked;*/
 
-  selectedImageId = imgId;
+  /*selectedImageId = imgId;
 
   if(imgId != ""){
     image = document.getElementById(imgId).src;
-  }
+  }*/
 
-  /**if(fit){
-    sdk.setContent("<img width='100%' src='" + image + "'/>");
 
+    sdk.setContent("<img width='100%' src='" + imgId + "'/>");
+/*
   }else{
 
     if(acenter){
