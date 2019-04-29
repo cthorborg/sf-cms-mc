@@ -1,11 +1,11 @@
-<iframe style="height:100%;width:100;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
-
 <script src="https://apis.google.com/js/api.js"></script>
 <script src="blocksdk.js"></script>
 
 <script>
   	var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  sdk.setContent('<center><img width="50px" src="https://sfmc-giphy.herokuapp.com/giphy.gif" /></center>'); //resets content block
+  
+  sdk.setBlockEditorWidth(600);
+  sdk.setContent('<center><img width="600px" src="https://sfmc-giphy.herokuapp.com/giphy.gif" /></center>'); //resets content block
   
   window.addEventListener("message", function(event){
     if(event.data.__type) {
@@ -43,4 +43,5 @@ function chosen(imgId) {
   }**/
 }
 
-    </script>
+</script>
+<iframe style="width:100px;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
