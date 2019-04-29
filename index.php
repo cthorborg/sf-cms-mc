@@ -1,5 +1,4 @@
-<?php echo '<p>Hello World</p>'; ?> 
-<iframe style="height:600px;width:600px;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
+<iframe style="height:100%;width:100;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
 
 <script src="https://apis.google.com/js/api.js"></script>
 <script src="blocksdk.js"></script>
@@ -10,7 +9,7 @@
   
   window.addEventListener("message", function(event){
     if(event.data.__type) {
-      alert(JSON.stringify(event.data));
+      //alert(JSON.stringify(event.data));
       chosen(event.data.public_link);
     }
   }, false);
