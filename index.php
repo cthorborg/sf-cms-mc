@@ -45,4 +45,4 @@ function chosen(imgId) {
 }
 
 </script>
-<iframe style="width:600px;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
+<iframe style="height:100%;width:600px;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
