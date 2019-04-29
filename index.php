@@ -4,7 +4,7 @@
 <script>
   	var sdk = new window.sfdc.BlockSDK(); //initalize SDK
   
-  sdk.setBlockEditorWidth(600px);
+  sdk.setBlockEditorWidth('600px');
   sdk.setContent('<center><img width="100%" src="https://sfmc-giphy.herokuapp.com/giphy.gif" /></center>'); //resets content block
   
   window.addEventListener("message", function(event){
@@ -17,7 +17,7 @@
 function chosen(imgId) {
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
-  sdk.setBlockEditorWidth(600px);
+  sdk.setBlockEditorWidth('600px');
   sdk.setContent(""); //resets content block
 
   /*var fit = document.getElementById('scaleFit').checked;
