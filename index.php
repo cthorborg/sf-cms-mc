@@ -5,7 +5,7 @@
   	var sdk = new window.sfdc.BlockSDK(); //initalize SDK
   
   sdk.setBlockEditorWidth(600);
-  sdk.setContent('<center><img width="600px" src="https://sfmc-giphy.herokuapp.com/giphy.gif" /></center>'); //resets content block
+  sdk.setContent('<center><img width="100%" src="https://sfmc-giphy.herokuapp.com/giphy.gif" /></center>'); //resets content block
   
   window.addEventListener("message", function(event){
     if(event.data.__type) {
@@ -44,4 +44,4 @@ function chosen(imgId) {
 }
 
 </script>
-<iframe style="width:100px;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
+<iframe style="width:600px;" src="https://sfmc.stylelabsdev.com/en-us/sitecore-plugin/approved-assets"></iframe>
