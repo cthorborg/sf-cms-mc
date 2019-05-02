@@ -5,7 +5,7 @@
   	var sdk = new window.sfdc.BlockSDK(); //initalize SDK
   
   sdk.setBlockEditorWidth('600px');
-  sdk.setContent('<center><img width="300px" src="https://mc-stylelabs.herokuapp.com/icon.png" /></center>'); //resets content block
+  sdk.setContent('<center><img width="150px" src="https://mc-stylelabs.herokuapp.com/icon.png" /></center>'); //resets content block
   
   window.addEventListener("message", function(event){
     if(event.data.__type) {
