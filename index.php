@@ -144,9 +144,9 @@ function chosen(imgId) {
   }
 
   if(fit){
-	  var content = '<?php include "block_test_1.html"; ?>';
-	  content.replace("text_string","Hello World!";
-	content.replace("img_url",image;		  
+	  	  var content = '<div style="width:100%;background-color:red;">text_string<img style="width:100px;height:auto;" src="img_url"></div>';
+	  content.replace("text_string","Hello World!");
+	  content.replace("img_url",image);
     sdk.setContent(content);
 //sdk.setContent("<div>This is a test to input text as well as an image <br><img width='100%' src='" + image + "'/></div>");
 
