@@ -144,7 +144,7 @@ function chosen(imgId) {
   }
 
   if(fit){
-	  var content = "<?php include "block_test_1.html"; ?>";
+	  var content = '<?php include "block_test_1.html"; ?>';
 	  content.replace("text_string","Hello World!";
 	content.replace("img_url",image;		  
     sdk.setContent(content);
