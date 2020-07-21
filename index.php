@@ -76,7 +76,7 @@ $json = file_get_contents('./example.json');
   <script>
 
     var content = JSON.parse('<?php echo $json ?>');
-	  console.log("test:", content);
+	  console.log("test:", JSON.stringify(content));
 	  console.log(content.items[0].bannerImage.altText);
     var selectedImageId, image;
     var offset = 0;
