@@ -64,19 +64,14 @@ Select an image to from Giphy CMS
 
 	<script src="blocksdk.js"></script>
 
-	<?php
-
-// Read JSON file
-$json = file_get_contents('./example.json');
-
-//Decode JSON
-//$json_data = json_decode($json,true);
-
-?>
   <script>
-
-    var content = JSON.parse('<?php echo $json ?>');
-	  console.log("test:", JSON.stringify(content));
+	
+	  var content;
+$.getJSON( "./example.json", function( data ) {
+ content = data;
+});
+	  
+	  console.log("test:", content);
 	  console.log(content.items[0].bannerImage.altText);
     var selectedImageId, image;
     var offset = 0;
