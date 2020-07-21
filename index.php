@@ -70,12 +70,12 @@ Select an image to from Giphy CMS
 $json = file_get_contents('./example.json');
 
 //Decode JSON
-$json_data = json_decode($json,true);
+//$json_data = json_decode($json,true);
 
 ?>
   <script>
 
-    var content = '<?php echo $json_data ?>';
+    var content = JSON.parse('<?php echo $json ?>');
 	  console.log("test:", content);
 	  console.log(content.items[0].bannerImage.altText);
     var selectedImageId, image;
