@@ -69,10 +69,12 @@ Select an image to from Giphy CMS
 	  var content = {};
 $.getJSON( "example.js", function( data ) {
  content = data;
-});
+
 	  
 	  console.log("test:", JSON.stringify(content));
 	  console.log(content.items[0].bannerImage.altText);
+	
+	});
     var selectedImageId, image;
     var offset = 0;
     var term = "";
