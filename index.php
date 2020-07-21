@@ -66,9 +66,9 @@ Select an image to from Giphy CMS
 
   <script>
 	
-	  var content;
+	  var content = {};
 $.getJSON( "example.js", function( data ) {
- content = JSON.parse(data);
+ content = data;
 });
 	  
 	  console.log("test:", JSON.stringify(content));
