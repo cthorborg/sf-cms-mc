@@ -72,7 +72,7 @@ $.getJSON( "example.json", function( data ) {
 	alert(content);
 });
 	  
-	  console.log("test:", content);
+	  console.log("test:", JSON.stringify(content));
 	  console.log(content.items[0].bannerImage.altText);
     var selectedImageId, image;
     var offset = 0;
