@@ -1,15 +1,3 @@
-<?php
-
-// Read JSON file
-$json = file_get_contents('./example.json');
-
-//Decode JSON
-$json_data = json_decode($json,true);
-
-//Print data
-print_r($json_data);
-
-?>
 <html>
 
 <head>
@@ -76,8 +64,19 @@ Select an image to from Giphy CMS
 
 	<script src="blocksdk.js"></script>
 
+	<?php
+
+// Read JSON file
+$json = file_get_contents('./example.json');
+
+//Decode JSON
+$json_data = json_decode($json,true);
+
+?>
   <script>
 
+    var content = '<?php echo json_encode($json_data) ?>';
+	  console.log("test:", content);
     var selectedImageId, image;
     var offset = 0;
     var term = "";
