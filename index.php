@@ -69,7 +69,7 @@ Select an image to from Giphy CMS
 	  var content = {};
 $.getJSON( "example.js", function( data ) { }; function ( {
  content = data;
-	});
+	}));
 	  
 	  console.log("test:", content);
 	  console.log(content.items[0].contentNodes.bannerImage.altText);
