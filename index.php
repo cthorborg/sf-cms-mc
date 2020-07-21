@@ -67,14 +67,14 @@ Select an image to from Giphy CMS
   <script>
 	
 	  var content = {};
-$.getJSON( "example.js", function( data ) {
+$.getJSON( "example.js", function( data ) { } function ( {
  content = data;
-
+	});
 	  
 	  console.log("test:", content);
-	  console.log(content.items[0].bannerImage.altText);
+	  console.log(content.items[0].contentNodes.bannerImage.altText);
 	
-	});
+
     var selectedImageId, image;
     var offset = 0;
     var term = "";
