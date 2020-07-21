@@ -71,7 +71,7 @@ $.getJSON( "example.js", function( data ) {
  content = data;
 
 	  
-	  console.log("test:", JSON.stringify(content));
+	  console.log("test:", content);
 	  console.log(content.items[0].bannerImage.altText);
 	
 	});
