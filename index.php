@@ -75,7 +75,7 @@ $json_data = json_decode($json,true);
 ?>
   <script>
 
-    var content = JSON.parse('<?php echo $json_data ?>');
+    var content = '<?php echo $json_data ?>';
 	  console.log("test:", content);
 	  console.log(content.items[0].bannerImage.altText);
     var selectedImageId, image;
