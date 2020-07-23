@@ -145,9 +145,11 @@ function chosen(imgId) {
   if(fit){
 	  
 	  	  var raw_content = {};
+	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/'"
 $.getJSON( "example.js", function(){console.log("success");}).done(function(data) {
 	
 	raw_content = data;
+	
 	console.log("test:", content);
 	  console.log(raw_content.items[0].contentNodes.bannerImage.altText);									  
 										  
@@ -155,7 +157,7 @@ $.getJSON( "example.js", function(){console.log("success");}).done(function(data
 										 
 	  	  var content = '<div style="width:100%;background-color:red;">text_string<img style="width:100px;height:auto;" src="img_url"></div>';
 	  content = content.replace("text_string",raw_content.items[0].contentNodes.bannerImage.altText);
-	  content = content.replace("img_url",image);
+	  content = content.replace("img_url",base_url.concat(raw_content.items[0].contentNodes.bannerImage.url));
     sdk.setContent(content);
 	 });
 //sdk.setContent("<div>This is a test to input text as well as an image <br><img width='100%' src='" + image + "'/></div>");
