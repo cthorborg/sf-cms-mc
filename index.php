@@ -145,7 +145,7 @@ function chosen(imgId) {
   if(fit){
 	  
 	  	  var raw_content = {};
-	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/'"
+	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/"
 $.getJSON( "example.js", function(){console.log("success");}).done(function(data) {
 	
 	raw_content = data;
