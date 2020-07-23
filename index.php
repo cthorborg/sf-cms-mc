@@ -145,7 +145,7 @@ window.onscroll = function(ev) {
       fetchGifs(offset, term);
     }
 };
-
+}
     </script>
 </body>
 </html>
