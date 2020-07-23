@@ -73,6 +73,7 @@ Select an image to from Salesforce CMS
     var offset = 0;
     var term = "";
     var originals = {};
+	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
 
 $(document).ready(function(){
 
@@ -101,7 +102,7 @@ function fetchGifs() {
       }
     }
   }});*/
-	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
+	  
 $.ajax({url: "example.js", complete: function(data) {
 	
 	originals = JSON.parse(data.responseText);
