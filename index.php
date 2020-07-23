@@ -104,8 +104,13 @@ function fetchGifs() {
   }});*/
 	  
 $.ajax({url: "example.js", complete: function(data) {
-	
-	originals = JSON.parse(data.responseText);
+	var json_data = JSON.parse(data.responseText);
+	var i;
+	for (i in json_data) {
+		
+		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('image" + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+originals.items[0].contentNodes.bannerImage.url+"\" /> <span style=\"padding-left: 20px\">"+originals.items[0].contentNodes.bannerImage.altText+"</span></a>")
+	}
+	originals = json_data;
 	
 	console.log(data);
 	console.log(originals);
@@ -130,7 +135,7 @@ $( "#content_set" ).click(function() {
 	 		  
 																				  
 										 
-	  	  var content = '<div style="width:100%;background-color:red;">text_string<img style="width:100px;height:auto;" src="img_url"></div>';
+	  	  var content = '<div style="width:100%;">text_string<img style="width:100px;height:auto;" src="img_url"></div>';
 	  content = content.replace("text_string",originals.items[0].contentNodes.bannerImage.altText);
 	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
     sdk.setContent(content);
