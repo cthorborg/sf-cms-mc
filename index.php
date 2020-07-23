@@ -33,6 +33,7 @@ Select an image to from Salesforce CMS
 <br />
 <input type="text" id="content_heading"></input><br />
 <textarea id="content_text" name="content_text" rows="4" cols="50"></textarea><br />
+<input type="button" id="content_edit" value="Edit Content"></input>
 <input type="button" id="content_set" value="Set Content"></input><br />
 <!--<input type="text" id="search_term"><span class="itemlist" style="padding-left: 10px;padding-right: 10px;"></span></input>
 <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
@@ -115,7 +116,7 @@ $.ajax({url: "example.js", complete: function(data) {
 	
 	for (i in json_data) {
 		
-		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('image" + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+originals.items[0].contentNodes.bannerImage.url+"\" /> <span style=\"padding-left: 20px\">"+originals.items[0].contentNodes.bannerImage.altText+"</span></a>")
+		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('image" + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(originals.items[0].contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+originals.items[0].contentNodes.bannerImage.altText+"</span></a>")
 	}
 
 
@@ -125,9 +126,15 @@ $.ajax({url: "example.js", complete: function(data) {
 $( "#content_set" ).click(function() {
   chosen();
 });
+	
+	$( "#content_edit" ).click(function() {
+  edit();
+});
 
 });
-	  
+	   function edit() {
+		   alert("test");
+		   {
 	  function chosen() {
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
