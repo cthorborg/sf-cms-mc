@@ -150,8 +150,7 @@ $.getJSON( "example.js", function(){console.log("success");}).done(function(data
 	
 	raw_content = data;
 	
-	console.log("test:", content);
-	  console.log(raw_content.items[0].contentNodes.bannerImage.altText);									  
+	  console.log(base_url.concat(raw_content.items[0].contentNodes.bannerImage.url));									  
 										  
 										  
 										 
