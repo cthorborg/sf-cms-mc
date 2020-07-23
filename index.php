@@ -116,7 +116,7 @@ $.ajax({url: "example.js", complete: function(data) {
 	
 	for (i in json_data.items) {
 		
-		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('image" + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(originals.items[0].contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+originals.items[0].contentNodes.bannerImage.altText+"</span></a>")
+		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('" + i + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(i.contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+i.contentNodes.bannerImage.altText+"</span></a>")
 	}
 
 
@@ -137,8 +137,8 @@ $( "#content_set" ).click(function() {
 		   $("#content_heading").val(originals.items[0].contentNodes.bannerImage.altText);
 	   }
 	  
-	  function chosen() {
-
+	  function chosen(i) {
+console.log(i);
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
   sdk.setContent(""); //resets content block
 
