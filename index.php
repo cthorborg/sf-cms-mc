@@ -103,7 +103,7 @@ function fetchGifs() {
 $.ajax({async: false, url: "example.js", success: function(data) {
 	
 	originals = data;
-	
+	console.log(data);
 	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));	
 
    }});
