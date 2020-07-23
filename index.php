@@ -17,6 +17,7 @@
 .itemlist{
  font-size: 12px;
 }
+);
 </style>
 
 </head>
@@ -145,7 +146,7 @@ window.onscroll = function(ev) {
       fetchGifs(offset, term);
     }
 };
-}
+});
     </script>
 </body>
 </html>
