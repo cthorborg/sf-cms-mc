@@ -106,15 +106,18 @@ function fetchGifs() {
 $.ajax({url: "example.js", complete: function(data) {
 	var json_data = JSON.parse(data.responseText);
 	var i;
-	for (i in json_data) {
-		
-		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('image" + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+originals.items[0].contentNodes.bannerImage.url+"\" /> <span style=\"padding-left: 20px\">"+originals.items[0].contentNodes.bannerImage.altText+"</span></a>")
-	}
-	originals = json_data;
+	
+		originals = json_data;
 	
 	console.log(data);
 	console.log(originals);
 	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));	
+	
+	for (i in json_data) {
+		
+		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('image" + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+originals.items[0].contentNodes.bannerImage.url+"\" /> <span style=\"padding-left: 20px\">"+originals.items[0].contentNodes.bannerImage.altText+"</span></a>")
+	}
+
 
    }});
 }
