@@ -133,7 +133,8 @@ $( "#content_set" ).click(function() {
 
 });
 	   function edit() {
-		   alert("test");
+		   $("#content_text)").val(originals.items[0].contentNodes.bannerImage.fileName);
+		   $("#content_heading)").val(originals.items[0].contentNodes.bannerImage.altText);
 	   }
 	  
 	  function chosen() {
@@ -146,8 +147,9 @@ $( "#content_set" ).click(function() {
 	 		  
 																				  
 										 
-	  	  var content = '<div style="width:100%;">text_string<img style="width:100px;height:auto;" src="img_url"></div>';
-	  content = content.replace("text_string",originals.items[0].contentNodes.bannerImage.altText);
+	  	  var content = '<div style="width:100%;">content_heading<img style="width:100px;height:auto;" src="img_url">content_text</div>';
+	  content = content.replace("content_heading",$("#content_heading)").val());
+	  content = content.replace("content_text",$("#content_text)").val());
 	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
     sdk.setContent(content);
 	
