@@ -134,7 +134,8 @@ $( "#content_set" ).click(function() {
 });
 	   function edit() {
 		   alert("test");
-		   {
+	   }
+	  
 	  function chosen() {
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
