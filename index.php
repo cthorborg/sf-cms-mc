@@ -105,7 +105,7 @@ $.getJSON( "example.js", function(){console.log("success");}).done(function(data
 	
 	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));	
 
-  
+   });
 }
 								   
 chosen();
@@ -124,7 +124,7 @@ function chosen() {
 	  content = content.replace("text_string",originals.items[0].contentNodes.bannerImage.altText);
 	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
     sdk.setContent(content);
-	 });
+	
 //sdk.setContent("<div>This is a test to input text as well as an image <br><img width='100%' src='" + image + "'/></div>");
 
   }else{
