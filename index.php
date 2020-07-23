@@ -28,12 +28,12 @@
 <img width="80%" src="giphy.gif" />
 <br />
 
-Select an image to from Giphy CMS
+Select an image to from Salesforce CMS
 <br />
-<input type="text" id="search_term"><span class="itemlist" style="padding-left: 10px;padding-right: 10px;"></span></input>
+<!--<input type="text" id="search_term"><span class="itemlist" style="padding-left: 10px;padding-right: 10px;"></span></input>
 <input type="button" id="Search" value="Search"><span class="itemlist" style="padding-left: 10px;padding-right: 10px;"></span></input><br />
-	<input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
-<input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>
+<input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
+<input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
 </p>
 
 
@@ -83,34 +83,13 @@ $(document).ready(function(){
 
 // get the trending gifs
 
-fetchGifs(offset);
+fetchGifs();
 
-$("#Next").click(function(){
-				offset += 10;
-        fetchGifs(offset, term);
-    });
+function fetchGifs() {
 
+  /*var apiurl = "";
 
-    $("#Search").click(function(){
-        offset = 0;
-				term = $("#search_term").val();
-        fetchGifs(offset, term, true);
-    });
-});
-
-function fetchGifs(offset, searchterm, clear) {
-
-
-  var apiurl = "";
-
-  if (searchterm) {
-    if (clear) {
-      clearGifs();
-    }
-    apiurl = "https://api.giphy.com/v1/gifs/search?api_key=zY2jNXB6UERsJOv9QweHDlhwn7dU32bO&q="+searchterm+"&limit=10&offset="+offset+"&rating=G&lang=en";
-  } else {
-    apiurl = "https://api.giphy.com/v1/gifs/trending?api_key=zY2jNXB6UERsJOv9QweHDlhwn7dU32bO&limit=10&offset="+offset+"&rating=G";
-  }
+  apiurl = "https://api.giphy.com/v1/gifs/trending?api_key=zY2jNXB6UERsJOv9QweHDlhwn7dU32bO&limit=10&offset="+offset+"&rating=G";
   $.ajax({url: apiurl, success: function(result){
     for (i = 0; i < result.data.length; i++) { 
     if (result.data[i].images.preview_gif['url'] && result.data[i].images.original['webp'] ) {
@@ -118,45 +97,32 @@ function fetchGifs(offset, searchterm, clear) {
         originals["image"+result.data[i].id] = result.data[i].images.original['webp'];
       }
     }
-  }});
+  }});*/
+	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
+$.getJSON( "example.js", function(){console.log("success");}).done(function(data) {
+	
+	originals = data;
+	
+	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));	
 
   
 }
+								   
+chosen();
 
-function clearGifs() {
-  $("#list-tab").html("");
-}
-
-function chosen(imgId) {
+function chosen() {
 
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
   sdk.setContent(""); //resets content block
 
-  var fit = document.getElementById('scaleFit').checked;
-  var acenter = document.getElementById('alignCenter').checked;
 
-  selectedImageId = imgId;
-
-  if(imgId != ""){
-    //image = document.getElementById(imgId).src;
-    image = originals[imgId];
-  }
-
-  if(fit){
-	  
-	  	  var raw_content = {};
-	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
-$.getJSON( "example.js", function(){console.log("success");}).done(function(data) {
-	
-	raw_content = data;
-	
-	  console.log(base_url.concat(raw_content.items[0].contentNodes.bannerImage.url));									  
-										  
-										  
+  if(true){
+	 		  
+																				  
 										 
 	  	  var content = '<div style="width:100%;background-color:red;">text_string<img style="width:100px;height:auto;" src="img_url"></div>';
-	  content = content.replace("text_string",raw_content.items[0].contentNodes.bannerImage.altText);
-	  content = content.replace("img_url",base_url.concat(raw_content.items[0].contentNodes.bannerImage.url));
+	  content = content.replace("text_string",originals.items[0].contentNodes.bannerImage.altText);
+	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
     sdk.setContent(content);
 	 });
 //sdk.setContent("<div>This is a test to input text as well as an image <br><img width='100%' src='" + image + "'/></div>");
