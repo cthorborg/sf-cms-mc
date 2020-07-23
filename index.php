@@ -102,8 +102,10 @@ function fetchGifs() {
 	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
 $.ajax({url: "example.js", complete: function(data) {
 	
-	originals = data;
+	originals = data.responseText;
+	
 	console.log(data);
+	console.log(originals);
 	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));	
 
    }});
