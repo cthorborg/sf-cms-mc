@@ -100,13 +100,13 @@ function fetchGifs() {
     }
   }});*/
 	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
-$.getJSON( "example.js", function(){console.log("success");}).done(function(data) {
+$.ajax({async: false, url: "example.js", success: function(data) {
 	
 	originals = data;
 	
 	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));	
 
-   });
+   }});
 }
 								   
 chosen();
