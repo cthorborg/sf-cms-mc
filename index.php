@@ -100,7 +100,7 @@ function fetchGifs() {
     }
   }});*/
 	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
-$.ajax({url: "example.js", success: function(data) {
+$.ajax({url: "example.js", complete: function(data) {
 	
 	originals = data;
 	console.log(data);
