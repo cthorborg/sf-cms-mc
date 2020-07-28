@@ -55,6 +55,7 @@
       var term = "";
       var originals = {};
   	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
+      var fileNames = new Array();
 
       $(document).ready(function(){
 
@@ -64,6 +65,19 @@
           ('<img width="50px" src="https://sfmc-giphy.herokuapp.com/giphy.gif" />'); //resets content block
         */
         // get the trending gifs
+
+        //Get styles from folder
+        $.ajax({
+          url: "/styles/",
+          complete: function(data){
+             $(data).find("td > a").each(function(){
+                if(openFile($(this).attr("href"))){
+                    fileNames.push($(this).attr("href"));
+                }
+             });
+          }
+        });
+        console.log(fileNames);
 
         fetchGifs();
 
