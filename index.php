@@ -68,7 +68,7 @@
 
         //Get styles from folder
         $.ajax({
-          url: "/styles/",
+          url: "getstyles.php",
           complete: function(data){
              $(data).find("td > a").each(function(){
                 if(openFile($(this).attr("href"))){
