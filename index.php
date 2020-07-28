@@ -89,7 +89,7 @@
 
           	for (i in json_data.items) {
           		console.log("i:" + i);
-          		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('" + i + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(i.contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+i.contentNodes.bannerImage.altText+"</span></a>")
+          		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('" + i + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(originals.items[i].contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+base_url.concat(originals.items[i].contentNodes.bannerImage.altText)+"</span></a>")
           	}
           }});
         }
