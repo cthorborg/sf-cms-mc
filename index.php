@@ -77,7 +77,7 @@
              });
           }
         });
-        console.log(fileNames);
+        console.log(fileNames.toString());
 
         fetchGifs();
 
