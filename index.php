@@ -54,8 +54,8 @@
       var offset = 0;
       var term = "";
       var originals = {};
-  	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices"
-      var fileNames = new Array();
+  	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices";
+      var fileNames = {};
 
       $(document).ready(function(){
 
