@@ -70,7 +70,8 @@
         $.ajax({
           url: "getstyles.php",
           complete: function(data){
-            fileNames = data.responseText;
+            fileNames = JSON.parse(data.responseText);
+            var i;
             for (i in fileNames) {
               console.log(fileNames[i]);
             }
