@@ -73,7 +73,7 @@
              fileNames = data;
           }
         });
-        console.log(fileNames.toString());
+        //console.log(fileNames.toString());
 
         fetchGifs();
 
