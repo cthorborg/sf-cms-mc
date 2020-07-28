@@ -71,9 +71,11 @@
           url: "getstyles.php",
           complete: function(data){
              fileNames = data;
+             console.log("to string data" + data.toString());
+             console.log("plain data" + data);
           }
         });
-        //console.log(fileNames.toString());
+        console.log(fileNames.toString());
 
         fetchGifs();
 
