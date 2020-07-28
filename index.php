@@ -69,7 +69,7 @@ Select an image to from Salesforce CMS
 	<script src="blocksdk.js"></script>
 
   <script>
-	
+
     var selectedImageId, image;
     var offset = 0;
     var term = "";
@@ -96,37 +96,38 @@ function fetchGifs() {
 
   apiurl = "https://api.giphy.com/v1/gifs/trending?api_key=zY2jNXB6UERsJOv9QweHDlhwn7dU32bO&limit=10&offset="+offset+"&rating=G";
   $.ajax({url: apiurl, success: function(result){
-    for (i = 0; i < result.data.length; i++) { 
+    for (i = 0; i < result.data.length; i++) {
     if (result.data[i].images.preview_gif['url'] && result.data[i].images.original['webp'] ) {
         $("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('image" + result.data[i].id + "')\"><image width=\"20%\" id=\"image" + result.data[i].id + "\" src=\""+result.data[i].images.preview_gif['url']+"\" /> <span style=\"padding-left: 20px\">"+result.data[i].title+"</span></a>")
         originals["image"+result.data[i].id] = result.data[i].images.original['webp'];
       }
     }
   }});*/
-	  
+
 $.ajax({url: "example.js", complete: function(data) {
 	var json_data = JSON.parse(data.responseText);
 	var i;
-	
+
 		originals = json_data;
-	
+
 	console.log(data);
 	console.log(originals);
-	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));	
-	
+	  console.log(base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+
 	for (i in json_data.items) {
 		console.log(i);
+    alert(i);
 		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('" + i + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(i.contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+i.contentNodes.bannerImage.altText+"</span></a>")
 	}
 
 
    }});
 }
-								   
+
 $( "#content_set" ).click(function() {
   chosen();
 });
-	
+
 	$( "#content_edit" ).click(function() {
   edit();
 });
@@ -136,7 +137,7 @@ $( "#content_set" ).click(function() {
 		   $("#content_text").val(originals.items[0].contentNodes.bannerImage.fileName);
 		   $("#content_heading").val(originals.items[0].contentNodes.bannerImage.altText);
 	   }
-	  
+
 	  function chosen(i) {
 console.log(i);
   var sdk = new window.sfdc.BlockSDK(); //initalize SDK
@@ -144,15 +145,15 @@ console.log(i);
 
 
   if(true){
-	 		  
-																				  
-										 
+
+
+
 	  	  var content = '<div style="width:100%;">content_heading<img style="width:100px;height:auto;" src="img_url">content_text</div>';
 	  content = content.replace("content_heading",$("#content_heading").val());
 	  content = content.replace("content_text",$("#content_text").val());
 	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
     sdk.setContent(content);
-	
+
 //sdk.setContent("<div>This is a test to input text as well as an image <br><img width='100%' src='" + image + "'/></div>");
 
   }else{
