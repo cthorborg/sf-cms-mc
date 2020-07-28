@@ -70,9 +70,10 @@
         $.ajax({
           url: "getstyles.php",
           complete: function(data){
-             fileNames = data;
-             console.log("to string data" + data.toString());
-             console.log("plain data" + data);
+            fileNames = data;
+            for (i in fileNames) {
+              console.log(fileNames[i]);
+            }
           }
         });
         console.log(fileNames.toString());
