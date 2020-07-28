@@ -33,7 +33,8 @@
       <input type="text" id="content_heading"></input><br />
       <textarea id="content_text" name="content_text" rows="4" cols="50"></textarea><br />
       <input type="button" id="content_edit" value="Edit Content"></input>
-      <input type="button" id="content_set" value="Set Content"></input><br />
+      <input type="button" id="content_set1" value="Set with Style 1"></input>
+      <input type="button" id="content_set2" value="Set with Style 2"></input><br />
       <!--<input type="text" id="search_term"><span class="itemlist" style="padding-left: 10px;padding-right: 10px;"></span></input>
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
@@ -83,19 +84,21 @@
 
             originals = json_data;
 
-          	console.log("data: " + data);
-          	console.log("origionals: " + originals);
-        	  console.log("test url:" + base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+          	console.log("json data: " + originals);
+        	  console.log("test data:" + base_url.concat(originals.items[0].contentNodes.bannerImage.url));
 
           	for (i in json_data.items) {
-          		console.log("i:" + i);
           		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:chosen('" + i + "')\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(originals.items[i].contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+base_url.concat(originals.items[i].contentNodes.bannerImage.altText)+"</span></a>")
           	}
           }});
         }
 
-        $( "#content_set" ).click(function() {
-          chosen();
+        $( "#content_set1" ).click(function() {
+          chosen(1);
+        });
+
+        $( "#content_set2" ).click(function() {
+          chosen(2);
         });
 
       	$( "#content_edit" ).click(function() {
@@ -108,25 +111,30 @@
           $("#content_heading").val(originals.items[0].contentNodes.bannerImage.altText);
         }
 
-        function chosen(i) {
-          console.log(i);
+        function chosen(style) {
           var sdk = new window.sfdc.BlockSDK(); //initalize SDK
           sdk.setContent(""); //resets content block
 
-          if(true){
-    	  	  var content = '<div style="width:100%;">content_heading<img style="width:100px;height:auto;" src="img_url">content_text</div>';
+          if(style == 1){
+    	  	  var content = '<div style="width:100%;"><img style="width:100px;height:auto;" src="img_url">content_text</div>';
         	  content = content.replace("content_heading",$("#content_heading").val());
         	  content = content.replace("content_text",$("#content_text").val());
         	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
             sdk.setContent(content);
           }
+          else if(style == 2) {
+            var content = '<div style="width:100%;">content_heading<img style="width:100px;height:auto;" src="img_url"></div>';
+            content = content.replace("content_heading",$("#content_heading").val());
+            content = content.replace("content_text",$("#content_text").val());
+            content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+            sdk.setContent(content);
+          }
           else {
-            if(acenter){
-                sdk.setContent("<div>This is a test to input text as well as an image <br><center><img src='" + image + "'/></center></div>");
-            }
-            else {
-                sdk.setContent("<div>This is a test to input text as well as an image <br><img src='" + image + "'/></div>");
-            }
+            var content = '<div style="width:100%;"><img style="width:100px;height:auto;" src="img_url"></div>';
+            content = content.replace("content_heading",$("#content_heading").val());
+            content = content.replace("content_text",$("#content_text").val());
+            content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+            sdk.setContent(content);
           }
         }
     </script>
