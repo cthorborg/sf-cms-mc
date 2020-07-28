@@ -70,7 +70,7 @@
         $.ajax({
           url: "getstyles.php",
           complete: function(data){
-             $(data).find("td > a").each(function(){
+             $(data).each(function(){
                 if(openFile($(this).attr("href"))){
                     fileNames.push($(this).attr("href"));
                 }
