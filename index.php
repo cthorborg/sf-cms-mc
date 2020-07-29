@@ -130,7 +130,7 @@
         });
 
         function pick_style() {
-          $("#preview").val(fileNames.files[i].contents);
+          $("#preview").val(fileNames.files[0].contents);
         }
 
         function edit() {
