@@ -40,8 +40,7 @@
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
     </p>
-    <br />Preview:<div id="preview" style="border:2px solid black;">
-      <div style="width:600px;font-size:10px;"><img name="img_url" style="width:200px;height:auto;" src="https://borg-mc-cms.herokuapp.com/icon.png"><div name="content_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat lacus ut neque interdum, et commodo sem vestibulum. Pellentesque ut faucibus sem, non commodo tellus. Donec lacinia tincidunt fermentum. Proin et luctus dolor, eu aliquam erat. Pellentesque felis tellus, efficitur a fermentum vel, tincidunt eu est. Praesent pellentesque malesuada rutrum. Mauris eu vestibulum tellus. Cras non facilisis arcu, id dignissim nunc.</div></div>
+    <br />Preview:<div id="preview" style="border:2px solid black;"></div>
 
     </div><br />
     <div class="list-group" id="list-style" role="stylelist">
@@ -146,11 +145,11 @@
           var sdk = new window.sfdc.BlockSDK(); //initalize SDK
           sdk.setContent(""); //resets content block
   	  	  //var content = style.contents;
-          console.log("preview and name " + $('#previw  div[name="content_heading"]').html());
-          console.log("preview " + $('#previw').html());
-          $('#previw  div[name="content_heading"]').html($("#content_heading").val());
-          $('#previw  div[name="content_text"]').html($("#content_text").val());
-          $('#previw  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+          console.log("preview and name " + $('#preview  div[name="content_heading"]').html());
+          console.log("preview " + $('#preview').html());
+          $('#preview  div[name="content_heading"]').html($("#content_heading").val());
+          $('#preview  div[name="content_text"]').html($("#content_text").val());
+          $('#preview  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
           /*content = content.replace("content_heading",$("#content_heading").val());
       	  content = content.replace("content_text",$("#content_text").val());
       	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));*/
