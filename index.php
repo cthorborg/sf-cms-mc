@@ -40,7 +40,7 @@
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
     </p>
-    <br />Preview:<div id="preview" style="border:2px solid black;"></div><br />
+    <br />Preview:<div id="preview" style="display:none;border:2px solid black;"></div><br />
     <div class="list-group" id="list-style" role="stylelist">
     </div>
     <div>
@@ -131,6 +131,7 @@
 
         function pick_style() {
           $("#preview").html(fileNames.files[0].contents);
+          chosen();
         }
 
         function edit() {
@@ -138,31 +139,17 @@
           $("#content_heading").val(originals.items[0].contentNodes.bannerImage.altText);
         }
 
-        function chosen(style) {
+        function chosen() {
           var sdk = new window.sfdc.BlockSDK(); //initalize SDK
           sdk.setContent(""); //resets content block
-
-          if(style == 1){
-    	  	  var content = '<div style="width:100%;"><img style="width:100px;height:auto;" src="img_url">content_text</div>';
-        	  content = content.replace("content_heading",$("#content_heading").val());
-        	  content = content.replace("content_text",$("#content_text").val());
-        	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
-            sdk.setContent(content);
-          }
-          else if(style == 2) {
-            var content = '<div style="width:100%;">content_heading<img style="width:100px;height:auto;" src="img_url"></div>';
-            content = content.replace("content_heading",$("#content_heading").val());
-            content = content.replace("content_text",$("#content_text").val());
-            content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
-            sdk.setContent(content);
-          }
-          else {
-            var content = '<div style="width:100%;"><img style="width:100px;height:auto;" src="img_url"></div>';
-            content = content.replace("content_heading",$("#content_heading").val());
-            content = content.replace("content_text",$("#content_text").val());
-            content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
-            sdk.setContent(content);
-          }
+  	  	  //var content = style.contents;
+          $('#previw[name="content_heading"]').html($("#content_heading").val());
+          $('#previw[name="content_text"]').html($("#content_text").val());
+          $('#previw[name="img_url"]')..attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+          /*content = content.replace("content_heading",$("#content_heading").val());
+      	  content = content.replace("content_text",$("#content_text").val());
+      	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));*/
+          sdk.setContent($("#preview").html());
         }
     </script>
   </body>
