@@ -1,14 +1,15 @@
 <?php
 $files = array();
+$result = array();
 $handle = opendir(dirname(realpath(__FILE__)).'/styles/');
     while($file = readdir($handle)){
-        $file_array = array();
+        $data = array();
         if($file !== '.' && $file !== '..'){
-            $file_array += ["filename" => "styles/$file"];
-            $file_array += ["contents" => file_get_contents("styles/$file"];
-            array_merge($files, $file_array);
+            $data["filename"] = "styles/$file";
+            $data["contents"] = file_get_contents("styles/$file");
+            $result["files"][]=$data;
         }
     }
 
-echo json_encode($filenameArray);
+echo json_encode($result);
 ?>
