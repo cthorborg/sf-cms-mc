@@ -145,7 +145,7 @@
   	  	  //var content = style.contents;
           $('#previw[name="content_heading"]').html($("#content_heading").val());
           $('#previw[name="content_text"]').html($("#content_text").val());
-          $('#previw[name="img_url"]')..attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+          $('#previw[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
           /*content = content.replace("content_heading",$("#content_heading").val());
       	  content = content.replace("content_text",$("#content_text").val());
       	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));*/
