@@ -40,7 +40,7 @@
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
     </p>
-    <br />Preview:<div id="preview" style="display:none;border:2px solid black;"></div><br />
+    <br />Preview:<div id="preview" style="border:2px solid black;"></div><br />
     <div class="list-group" id="list-style" role="stylelist">
     </div>
     <div>
@@ -143,6 +143,7 @@
           var sdk = new window.sfdc.BlockSDK(); //initalize SDK
           sdk.setContent(""); //resets content block
   	  	  //var content = style.contents;
+          alert($('#previw  div[name="content_heading"]').html());
           $('#previw  div[name="content_heading"]').html($("#content_heading").val());
           $('#previw  div[name="content_text"]').html($("#content_text").val());
           $('#previw  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
