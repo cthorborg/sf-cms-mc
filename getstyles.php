@@ -6,7 +6,7 @@ $handle = opendir(dirname(realpath(__FILE__)).'/styles/');
         if($file !== '.' && $file !== '..'){
             $file_array += ["filename" => "styles/$file"];
             $file_array += ["contents" => file_get_contents("styles/$file"];
-            array_push($files, $file_array);
+            array_merge($files, $file_array);
         }
     }
 
