@@ -77,7 +77,7 @@
             var i;
             for (i in fileNames.files) {
               console.log(fileNames.files);
-              $("#list-style").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"test-list-home-list\" data-toggle=\"list\" href=\"#test-list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:pick_style()\"><div style=\"padding-left: 20px\">"+fileNames.files[i].filename+"<div>"+fileNames.files[i].contents+"</div></div></a>")
+              $("#list-style").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"test-list-home-list\" data-toggle=\"list\" href=\"#test-list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:pick_style("+i+")\"><div style=\"padding-left: 20px\">"+fileNames.files[i].filename+"<div>"+fileNames.files[i].contents+"</div></div></a>")
             }
           }
         });
@@ -131,9 +131,8 @@
           });
         });
 
-        function pick_style() {
-          $("#preview").html(fileNames.files[0].contents);
-          chosen();
+        function pick_style(id) {
+          $("#preview").html(fileNames.files[id].contents);
         }
 
         function edit() {
@@ -145,8 +144,8 @@
           var sdk = new window.sfdc.BlockSDK(); //initalize SDK
           sdk.setContent(""); //resets content block
   	  	  //var content = style.contents;
-          console.log("preview and name " + $('#preview  div[name="content_heading"]').html());
-          console.log("preview " + $('#preview').html());
+          //console.log("preview and name " + $('#preview  div[name="content_heading"]').html());
+          //console.log("preview " + $('#preview').html());
           $('#preview  div[name="content_heading"]').html($("#content_heading").val());
           $('#preview  div[name="content_text"]').html($("#content_text").val());
           $('#preview  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
