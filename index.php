@@ -74,7 +74,7 @@
             var i;
             for (i in fileNames) {
               console.log(fileNames[i]);
-              $("#list-style").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"test-list-home-list\" data-toggle=\"list\" href=\"#test-list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:edit()\"><div style=\"padding-left: 20px\">"+fileNames[i]+"</div></a>")
+              $("#list-style").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"test-list-home-list\" data-toggle=\"list\" href=\"#test-list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:pick_style()\"><div style=\"padding-left: 20px\">"+fileNames[i]+"</div></a>")
             }
           }
         });
@@ -127,6 +127,9 @@
           edit();
           });
         });
+
+        function pick_style() {
+        }
 
         function edit() {
           $("#content_text").val(originals.items[0].contentNodes.bannerImage.fileName);
