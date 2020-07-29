@@ -72,8 +72,8 @@
           complete: function(data){
             fileNames = JSON.parse(data.responseText);
             var i;
-            for (i in fileNames) {
-              console.log(fileNames[i]);
+            for (i in fileNames.files) {
+              console.log(fileNames.files);
               $("#list-style").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"test-list-home-list\" data-toggle=\"list\" href=\"#test-list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:pick_style()\"><div style=\"padding-left: 20px\">"+fileNames.files[i].filename+"<div>"+fileNames.files[i].contents+"</div></div></a>")
             }
           }
@@ -105,7 +105,7 @@
           	console.log("json data: " + originals);
         	  console.log("test data:" + base_url.concat(originals.items[0].contentNodes.bannerImage.url));
 
-          	for (i in json_data.items) {
+          	for (i in originals.items) {
           		$("#list-tab").append("<a class=\"list-group-item list-group-item-action ctstyle itemlist\" id=\"list-home-list\" data-toggle=\"list\" href=\"#list-home\" role=\"tab\" aria-controls=\"home\" onclick=\"javascript:edit()\"><image width=\"20%\" id=\"image" + "1" + "\" src=\""+base_url.concat(originals.items[i].contentNodes.bannerImage.url)+"\" /> <span style=\"padding-left: 20px\">"+base_url.concat(originals.items[i].contentNodes.bannerImage.altText)+"</span></a>")
           	}
           }});
