@@ -40,7 +40,7 @@
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
     </p>
-    <br /><div id="preview"></div><br />
+    <br />Preview:<div id="preview" style="border:2px solid black;"></div><br />
     <div class="list-group" id="list-style" role="stylelist">
     </div>
     <div>
