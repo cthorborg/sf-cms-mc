@@ -146,7 +146,8 @@
           var sdk = new window.sfdc.BlockSDK(); //initalize SDK
           sdk.setContent(""); //resets content block
   	  	  //var content = style.contents;
-          alert($('#previw  div[name="content_heading"]').html());
+          console.log("preview and name " + $('#previw  div[name="content_heading"]').html());
+          console.log("preview " + $('#previw').html());
           $('#previw  div[name="content_heading"]').html($("#content_heading").val());
           $('#previw  div[name="content_text"]').html($("#content_text").val());
           $('#previw  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
