@@ -40,7 +40,10 @@
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
     </p>
-    <br />Preview:<div id="preview" style="border:2px solid black;"></div><br />
+    <br />Preview:<div id="preview" style="border:2px solid black;">
+      <div style="width:600px;font-size:10px;"><img name="img_url" style="width:200px;height:auto;" src="https://borg-mc-cms.herokuapp.com/icon.png"><div name="content_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat lacus ut neque interdum, et commodo sem vestibulum. Pellentesque ut faucibus sem, non commodo tellus. Donec lacinia tincidunt fermentum. Proin et luctus dolor, eu aliquam erat. Pellentesque felis tellus, efficitur a fermentum vel, tincidunt eu est. Praesent pellentesque malesuada rutrum. Mauris eu vestibulum tellus. Cras non facilisis arcu, id dignissim nunc.</div></div>
+
+    </div><br />
     <div class="list-group" id="list-style" role="stylelist">
     </div>
     <div>
