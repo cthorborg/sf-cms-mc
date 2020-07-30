@@ -132,7 +132,15 @@
         });
 
         function pick_style(id) {
-          $("#preview").html(fileNames.files[id].contents);
+          if ($('#preview').html()) {
+            $('#preview').html(fileNames.files[id].contents);
+          }
+          else {
+            $('#preview  div[name="content_heading"]').html($("#content_heading").val());
+            $('#preview  div[name="content_text"]').html($("#content_text").val());
+            $('#preview  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
+          }
+          chosen();
         }
 
         function edit() {
@@ -146,9 +154,6 @@
   	  	  //var content = style.contents;
           //console.log("preview and name " + $('#preview  div[name="content_heading"]').html());
           //console.log("preview " + $('#preview').html());
-          $('#preview  div[name="content_heading"]').html($("#content_heading").val());
-          $('#preview  div[name="content_text"]').html($("#content_text").val());
-          $('#preview  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
           /*content = content.replace("content_heading",$("#content_heading").val());
       	  content = content.replace("content_text",$("#content_text").val());
       	  content = content.replace("img_url",base_url.concat(originals.items[0].contentNodes.bannerImage.url));*/
