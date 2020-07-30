@@ -133,7 +133,7 @@
 
         function pick_style(id) {
           console.log("$('#preview').html():" + $('#preview').html());
-          if ($('#preview').html()) {
+          if ($('#preview').html() == "") {
             $('#preview').html(fileNames.files[id].contents);
           }
           else {
