@@ -33,9 +33,7 @@
       <input type="text" id="content_heading"></input><br />
       <textarea id="content_text" name="content_text" rows="4" cols="50"></textarea><br />
       <input type="button" id="content_edit" value="Edit Content"></input>
-      <input type="button" id="content_set" value="Set with Default Style"></input>
-      <input type="button" id="content_set1" value="Set with Style 1"></input>
-      <input type="button" id="content_set2" value="Set with Style 2"></input><br />
+      <input type="button" id="content_set" value="Set with Default Style"></input><br />
       <!--<input type="text" id="search_term"><span class="itemlist" style="padding-left: 10px;padding-right: 10px;"></span></input>
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
@@ -59,6 +57,7 @@
       var originals = {};
   	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices";
       var fileNames = {};
+      var pick_style;
 
       $(document).ready(function(){
 
@@ -132,6 +131,7 @@
         });
 
         function pick_style(id) {
+          pick_style = id;
           console.log("$('#preview').html():" + $('#preview').html());
           if ($("#content_heading").val() == "" && $("#content_text").val() == "") {
             $('#preview').html(fileNames.files[id].contents);
@@ -148,6 +148,7 @@
         function edit() {
           $("#content_text").val(originals.items[0].contentNodes.bannerImage.fileName);
           $("#content_heading").val(originals.items[0].contentNodes.bannerImage.altText);
+          pick_style(pick_style);
         }
 
         function chosen() {
