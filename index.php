@@ -57,7 +57,7 @@
       var originals = {};
   	  var base_url = "https://win19ss-test1-165c68767ee-16-16e60dfeda0.force.com/capricornjuices";
       var fileNames = {};
-      var pick_style;
+      var pick_style_id;
 
       $(document).ready(function(){
 
@@ -131,7 +131,7 @@
         });
 
         function pick_style(id) {
-          pick_style = id;
+          pick_style_id = id;
           console.log("$('#preview').html():" + $('#preview').html());
           if ($("#content_heading").val() == "" && $("#content_text").val() == "") {
             $('#preview').html(fileNames.files[id].contents);
@@ -148,7 +148,7 @@
         function edit() {
           $("#content_text").val(originals.items[0].contentNodes.bannerImage.fileName);
           $("#content_heading").val(originals.items[0].contentNodes.bannerImage.altText);
-          pick_style(pick_style);
+          pick_style(pick_style_id);
         }
 
         function chosen() {
