@@ -40,12 +40,12 @@
       <input type="checkbox" id="scaleFit" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Scale to fit</span></input>
       <input type="checkbox" id="alignCenter" onclick="javascript:chosen('')" value="Yes" ><span class="itemlist" style="padding-left: 10px;padding-right: 10px;">Align to Center</span></input>-->
     </p>
-    <br />Preview:<div id="preview" style="border:2px solid black;"></div>
+    <br /><span style="font-size:16px;">Preview:</span><div id="preview" style="border:2px solid black;"></div>
 
-    </div><br />
+  </div><br /><span style="font-size:16px;">Style</span>
     <div class="list-group" id="list-style" role="stylelist">
     </div>
-    <div>
+    <div><span style="font-size:16px;">CMS Content</span>
       <div class="list-group" id="list-tab" role="tablist">
       </div>
       <!-- <input type="button" id="Next" value="More"><span class="itemlist" style="padding-left: 10px;padding-right: 10px;"></span></input><br /> -->
@@ -132,10 +132,12 @@
         });
 
         function pick_style(id) {
+          console.log("$('#preview').html():" + $('#preview').html());
           if ($('#preview').html()) {
             $('#preview').html(fileNames.files[id].contents);
           }
           else {
+            $('#preview').html(fileNames.files[id].contents);
             $('#preview  div[name="content_heading"]').html($("#content_heading").val());
             $('#preview  div[name="content_text"]').html($("#content_text").val());
             $('#preview  img[name="img_url"]').attr("src",base_url.concat(originals.items[0].contentNodes.bannerImage.url));
