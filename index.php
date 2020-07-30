@@ -148,7 +148,9 @@
         function edit() {
           $("#content_text").val(originals.items[0].contentNodes.bannerImage.fileName);
           $("#content_heading").val(originals.items[0].contentNodes.bannerImage.altText);
-          pick_style(pick_style_id);
+          if(pick_style_id) {
+            pick_style(pick_style_id);
+          }
         }
 
         function chosen() {
